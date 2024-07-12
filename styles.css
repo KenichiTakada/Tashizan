@@ -12,19 +12,25 @@ body {
     text-align: center;
 }
 
-.numbers {
+.number-table {
     display: grid;
-    grid-template-columns: repeat(20, 50px);
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 10px;
+    gap: 5px;
+    margin-bottom: 20px;
 }
 
-.numbers span {
-    display: inline-block;
-    text-align: center;
+.number-row {
+    display: flex;
+    justify-content: center;
+}
+
+.number-row span {
     width: 50px;
-    font-size: 16px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    font-size: 18px;
 }
 
 .buttons {
