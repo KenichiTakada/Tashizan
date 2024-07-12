@@ -12,6 +12,21 @@ body {
     text-align: center;
 }
 
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(20, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.numbers span {
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    font-size: 16px;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(5, 50px);
@@ -42,4 +57,18 @@ button.btn span {
     position: absolute;
     top: 5px;
     left: 5px;
+}
+
+.center {
+    margin-bottom: 20px;
+}
+
+.center span {
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px 10px;
 }
