@@ -8,6 +8,7 @@ function toggleButton(button, section) {
     }
     updateNumbers(section);
     resetResult();
+    updateNumberTable();
 }
 
 function updateNumbers(section) {
@@ -45,4 +46,20 @@ function checkAnswer() {
     const num2 = parseInt(document.getElementById('num2').innerText);
     const result = num1 + num2;
     document.getElementById('result').innerText = result;
+}
+
+function updateNumberTable() {
+    const topCount = parseInt(document.getElementById('num1').innerText);
+    const bottomCount = parseInt(document.getElementById('num2').innerText);
+    const totalCount = topCount + bottomCount;
+    
+    const numberCells = document.querySelectorAll('.number-cell');
+    numberCells.forEach((cell, index) => {
+        cell.classList.remove('active-top', 'active-bottom');
+        if (index < topCount) {
+            cell.classList.add('active-top');
+        } else if (index < totalCount) {
+            cell.classList.add('active-bottom');
+        }
+    });
 }
