@@ -26,22 +26,20 @@ button.btn {
     background-color: lightgray;
     border: 1px solid #ccc;
     cursor: pointer;
+    position: relative;
+    font-size: 18px;
 }
 
-button.btn.active {
+button.btn.active-top {
     background-color: lightblue;
 }
 
-.center {
-    margin-bottom: 20px;
+button.btn.active-bottom {
+    background-color: lightgreen;
 }
 
-.center span {
-    font-size: 24px;
-    margin: 0 5px;
-}
-
-button {
-    font-size: 16px;
-    padding: 5px 10px;
+button.btn span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
