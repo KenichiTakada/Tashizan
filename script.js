@@ -1,5 +1,21 @@
 // script.js
 
+document.addEventListener('DOMContentLoaded', () => {
+    const topButtons = document.querySelectorAll('#top-buttons .btn');
+    const bottomButtons = document.querySelectorAll('#bottom-buttons .btn');
+    const checkAnswerBtn = document.getElementById('check-answer-btn');
+
+    topButtons.forEach(button => {
+        button.addEventListener('click', () => toggleButton(button, 'top'));
+    });
+
+    bottomButtons.forEach(button => {
+        button.addEventListener('click', () => toggleButton(button, 'bottom'));
+    });
+
+    checkAnswerBtn.addEventListener('click', checkAnswer);
+});
+
 function toggleButton(button, section) {
     if (section === 'top') {
         button.classList.toggle('active-top');
