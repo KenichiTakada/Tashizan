@@ -1,16 +1,31 @@
 // script.js
 
 function toggleButton(button, section) {
-    button.classList.toggle('active');
+    if (section === 'top') {
+        button.classList.toggle('active-top');
+    } else {
+        button.classList.toggle('active-bottom');
+    }
     updateNumbers(section);
+    resetResult();
 }
 
 function updateNumbers(section) {
     let count = 0;
     const buttons = document.querySelectorAll(`#${section}-buttons .btn`);
-    buttons.forEach(button => {
-        if (button.classList.contains('active')) {
+    buttons.forEach((button, index) => {
+        const span = button.querySelector('span');
+        if (button.classList.contains(section === 'top' ? 'active-top' : 'active-bottom')) {
             count++;
+            if (!span) {
+                const numberSpan = document.createElement('span');
+                numberSpan.textContent = count;
+                button.appendChild(numberSpan);
+            } else {
+                span.textContent = count;
+            }
+        } else if (span) {
+            button.removeChild(span);
         }
     });
     
@@ -19,6 +34,10 @@ function updateNumbers(section) {
     } else {
         document.getElementById('num2').innerText = count;
     }
+}
+
+function resetResult() {
+    document.getElementById('result').innerText = '?';
 }
 
 function checkAnswer() {
